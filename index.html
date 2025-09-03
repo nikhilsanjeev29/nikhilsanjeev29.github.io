@@ -25,14 +25,22 @@
     <p style="font-size: 30px; font-weight: bolder;"> Bold </p>
     <h2><del> Strikethrough </del></h2>
 
-    <h1><em><u><strong><del> Weird Text</del></strong></u></em></h1>
-
+    <h1><em><u><strong><del id="Weird"> Weird Text</del></strong></u></em></h1>
+    Enter Website to open : 
+    <input type="text" id="myTextInput" value="http://www.google.com">
     <button style="width: 150px; height: 50px; font-size: 20px" onclick= "myFunction()">Click Here!</button>
     
+
     <script>
     function myFunction() {
-        alert("Button Clicked!");
+        alert("Button Clicked!");    
+        const inputElement = document.getElementById('myTextInput');
+        const inputValue = inputElement.value;
+        alert("Text Entered "+inputValue);
+        document.getElementById('Weird').innerText = `Website to Open : ${inputValue}`;
+        window.open(inputValue);
     }
+
     </script>
 
 </body>
