@@ -32,9 +32,10 @@
     Enter Website to open : 
     <input type="text" id="myTextInput" value="http://www.google.com">
     <button style="width: 150px; height: 50px; font-size: 20px" onclick= "myFunction()">Click Here!</button>
-    
+
 
     <script>
+        // my dad helped with this
     function myFunction() {
         alert("Button Clicked!");    
         const inputElement = document.getElementById('myTextInput');
@@ -42,6 +43,17 @@
         alert("Text Entered "+inputValue);
         document.getElementById('Weird').innerText = `Website to Open : ${inputValue}`;
         window.open(inputValue);
+    }
+
+    </script>
+
+    <button style="width: 150px; height: 50px; font-size: 20px" onclick='musicFunction()'>Music!</button>
+    <audio id="songtestaudio" src="songtest2.wav"></audio>
+
+    <script> 
+    const songTestAudioElement = document.getElementById("songtestaudio");
+    function musicFunction() {
+        songTestAudioElement.play()
     }
 
     </script>
