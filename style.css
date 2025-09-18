@@ -15,21 +15,29 @@ body {
 
 h1, h2 {
     color: var(--primary);
-
 }
 
 p {
     color: var(--accent);
-
 }
 
 li{
     color: var(--primary);
+}
 
+center{
+    color: var(--primary);
+    font-size: 2em;
 }
 
 button {
+    padding: 4px;
     color: var(--primary);
-    border: 10pz(--secondary);
+    border: 10px solid var(--secondary);
     font-family: "Lexend";
 }   
+
+video {
+    background: var(--background);
+
+}
