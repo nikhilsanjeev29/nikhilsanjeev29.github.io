@@ -34,5 +34,11 @@ button {
 
 video {
     background: var(--background);
+}
 
+#Weird {
+    color: var(--accent);
+    font-style: italic;
+    font-style: bolder;
+    text-decoration: var(--accent) wavy underline;
 }
