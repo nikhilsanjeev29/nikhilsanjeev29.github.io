@@ -45,8 +45,10 @@ video {
 
 #Blue {
     color: blue;
+    text-decoration: dotted underline;
 }
 
 #Red {
     color: red;
+    text-decoration: dotted underline;
 }
