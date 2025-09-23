@@ -42,3 +42,11 @@ video {
     font-style: bolder;
     text-decoration: var(--accent) wavy underline;
 }
+
+#Blue {
+    color: blue;
+}
+
+#Red {
+    color: red;
+}
