@@ -24,7 +24,6 @@ li {
     padding-right: 8px;
     max-width: 15px;
     margin-left: 2em;
-
 }
 
 p {
@@ -40,7 +39,17 @@ button {
     color: var(--primary);
     border: 10px solid var(--secondary);
     font-family: "Lexend";
+    animation: rotation 3s infinite linear;
 }   
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 video {
     background: var(--background);
