@@ -13,8 +13,18 @@ body {
     font-family: "Lexend";
 }
 
-h1, h2, a, center, li {
+h1, h2, a, center {
     color: var(--primary);
+}
+
+li {
+    color: var(--primary);
+    border: 5px solid var(--accent);
+    padding-left: 9px;
+    padding-right: 8px;
+    max-width: 15px;
+    margin-left: 2em;
+
 }
 
 p {
@@ -26,7 +36,7 @@ center{
 }
 
 button {
-    padding: 4px;
+    padding-top: 4px;
     color: var(--primary);
     border: 10px solid var(--secondary);
     font-family: "Lexend";
