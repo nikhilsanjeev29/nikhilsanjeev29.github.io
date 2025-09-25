@@ -30,9 +30,25 @@ p {
     color: var(--accent);
 }
 
+img {
+    border: 5px solid;
+    animation: slide 3s 1s infinite alternate;
+
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(100px);
+    }
+
+}
+
 center{
     font-size: 2em;
-    animation: grow 3s infinite;
+    animation: grow 3s infinite alternate;
 }
 
 @keyframes grow {
@@ -49,7 +65,7 @@ button {
     color: var(--primary);
     border: 10px solid var(--secondary);
     font-family: "Lexend";
-    animation: rotation 3s infinite linear;
+    animation: rotation 3s infinite;
 }   
 
 @keyframes rotation {
