@@ -32,6 +32,16 @@ p {
 
 center{
     font-size: 2em;
+    animation: grow 3s infinite;
+}
+
+@keyframes grow {
+    from {
+        transform: scale(0.1);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 button {
