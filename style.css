@@ -30,9 +30,9 @@ p {
     color: var(--accent);
 }
 
-img {
+#realImage {
     border: 5px solid;
-    animation: slide 3s 1s infinite alternate;
+    animation: slide 3s infinite alternate;
 
 }
 
@@ -43,7 +43,6 @@ img {
     to {
         transform: translateX(100px);
     }
-
 }
 
 center{
