@@ -22,7 +22,8 @@ li {
     border: 5px solid var(--accent);
 }
 
-.HpList {
+
+#hpList > * {
     color: var(--primary);
     border: 5px solid var(--accent);
     padding-left: 9px;
