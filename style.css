@@ -20,6 +20,11 @@ h1, h2, a, center {
 li {
     color: var(--primary);
     border: 5px solid var(--accent);
+}
+
+.HpList {
+    color: var(--primary);
+    border: 5px solid var(--accent);
     padding-left: 9px;
     padding-right: 8px;
     max-width: 15px;
