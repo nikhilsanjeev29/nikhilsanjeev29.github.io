@@ -101,3 +101,16 @@ video {
     color: red;
     text-decoration: dotted underline;
 }
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu > ul {
+    display: flex;
+    list-style-type: none;
+    gap: 50px;
+
+}
