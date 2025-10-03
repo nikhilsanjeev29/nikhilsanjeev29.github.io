@@ -110,7 +110,6 @@ video {
 
 .menu > ul {
     display: flex;
-    list-style-type: none;
     gap: 50px;
 
 }
