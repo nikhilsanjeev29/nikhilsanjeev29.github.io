@@ -123,3 +123,12 @@ video {
 #nav_info:hover {
     cursor: pointer;
 }
+
+.menItem {
+    font-size: 1em;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.menItem:hover {
+    transform: scale(1.1);
+}
