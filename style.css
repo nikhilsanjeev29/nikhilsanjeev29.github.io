@@ -102,6 +102,11 @@ video {
     text-decoration: dotted underline;
 }
 
+.centeredText {
+    display: flex;
+    justify-content: center;
+}
+
 .menu {
     display: flex;
     justify-content: space-between;
