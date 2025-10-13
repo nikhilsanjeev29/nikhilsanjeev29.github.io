@@ -80,7 +80,7 @@ video {
 #Weird {
     color: var(--accent);
     font-style: italic;
-    font-style: bolder;
+    font-style: bold;
     text-decoration: var(--accent) wavy underline;
 }
 
