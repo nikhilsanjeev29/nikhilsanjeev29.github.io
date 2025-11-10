@@ -94,8 +94,10 @@
         const ageInput = document.getElementById("ageInput");
         const btnGreet = document.getElementById("btnGreet");
         const greetingOutput = document.getElementById("greetingOutput");
+        let message = "Hello " + nameInput + "you are " + ageInput + "years old!"
 
         btnGreet.addEventListener("click", () => {
+            btnGreet.innerText(message);
             // TODO: Display a message like "Hello NAME, you are AGE years old!"
             // Challenge: If age < 13, show "You're just a kid!" instead.
         });
