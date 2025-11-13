@@ -45,7 +45,7 @@
             <li class="menItem"><a href="hobbies.html">Hobbies</a></li>
             <li class="menItem"><a href="dogs.html">Dogs</a></li>
             <li class="menItem"><a href="js_games.html">Games</a></li>
-            <li class="menItem"><a href="input_element_challenge.html">Games</a></li>
+            <li class="menItem"><a href="input_element_challenge.html">Inputs</a></li>
 
         </ul>
     </nav>
@@ -73,6 +73,7 @@
         <label>
             Volume:
             <input id="volumeInput" type="range" min="0" max="100" value="50">
+            <div class="output" id="volumeOutput"></div>
         </label>
         <div class="output" id="colorOutput"></div>
     </section>
@@ -81,9 +82,9 @@
         <h2>Part 3: Checkbox and Radio Buttons</h2>
         <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
         <p>Pick a mode:</p>
-        <label><input type="radio" name="mode" value="Light"> Light</label>
-        <label><input type="radio" name="mode" value="Dark"> Dark</label>
-        <label><input type="radio" name="mode" value="System" checked> System</label>
+        <label><input type="radio" name="mode" value="Light" id="LightMode"> Light</label>
+        <label><input type="radio" name="mode" value="Dark" id = "DarkMode"> Dark</label>
+        <label><input type="radio" name="mode" value="System" checked id = "SystemMode"> System</label>
         <button id="btnSubmit">Submit</button>
         <div class="output" id="modeOutput"></div>
     </section>
@@ -94,20 +95,44 @@
         const ageInput = document.getElementById("ageInput");
         const btnGreet = document.getElementById("btnGreet");
         const greetingOutput = document.getElementById("greetingOutput");
-        let message = "Hello " + nameInput + "you are " + ageInput + "years old!"
-
+    
         btnGreet.addEventListener("click", () => {
-            btnGreet.innerText(message);
+            // btnGreet.innerText(message);
             // TODO: Display a message like "Hello NAME, you are AGE years old!"
             // Challenge: If age < 13, show "You're just a kid!" instead.
+            let name = nameInput.value;
+            let age = ageInput.value;
+            let message = "Hello " + name + " you are " + age + " years old!"
+            if(age < 13) {
+                message = "You're just a kid!"
+            }
+            console.log(message);
+            greetingOutput.textContent = message
         });
 
         // --- PART 2 ---   
         const colorInput = document.getElementById("colorInput");
         const volumeInput = document.getElementById("volumeInput");
         const colorOutput = document.getElementById("colorOutput");
+        const volumeOutput = document.getElementById("volumeOutput");
+        let colorChange = colorInput.value;
+        colorOutput.textContent = colorChange;
+        colorOutput.style.backgroundColor = colorChange;
+
+        colorInput.addEventListener("input", changeColorValue);
+
+        function changeColorValue(event) {
+            colorOutput.textContent = event.target.value;
+            colorOutput.style.backgroundColor = event.target.value;
+        }
+
+        volumeInput.addEventListener("input", changeVolumeValue);
+
+        function changeVolumeValue(event) {
+            volumeOutput.textContent = event.target.value;
+        }
         
-        colorOutput.style.backgroundColor = colorOutput.innerText();
+
 
         // TODO: Update the background color of colorOutput whenever the color input changes.
         // Challenge: Also display the hex code and volume value dynamically.
@@ -118,6 +143,12 @@
         const modeOutput = document.getElementById("modeOutput");
 
         btnSubmit.addEventListener("click", () => {
+            subscribeBox.addEventListener("change", changeValue);
+
+            function changeValue(event) {
+                
+            }
+
             // TODO: Find which radio button is checked and display it.
             // Challenge: Include whether the user subscribed or not.
         });
@@ -125,6 +156,3 @@
 </body>
 
 </html>
-input_elements_challenge.html
-External
-Displaying input_elements_challenge.html.
