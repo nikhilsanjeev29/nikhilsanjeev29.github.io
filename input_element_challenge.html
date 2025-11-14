@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +33,7 @@
 </head>
 
 <body>
-    
+
     <h1>Input Element Challenge</h1>
 
     <nav class="menu">
@@ -83,8 +82,8 @@
         <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
         <p>Pick a mode:</p>
         <label><input type="radio" name="mode" value="Light" id="LightMode"> Light</label>
-        <label><input type="radio" name="mode" value="Dark" id = "DarkMode"> Dark</label>
-        <label><input type="radio" name="mode" value="System" checked id = "SystemMode"> System</label>
+        <label><input type="radio" name="mode" value="Dark" id="DarkMode"> Dark</label>
+        <label><input type="radio" name="mode" value="System" checked id="SystemMode"> System</label>
         <button id="btnSubmit">Submit</button>
         <div class="output" id="modeOutput"></div>
     </section>
@@ -95,7 +94,7 @@
         const ageInput = document.getElementById("ageInput");
         const btnGreet = document.getElementById("btnGreet");
         const greetingOutput = document.getElementById("greetingOutput");
-    
+
         btnGreet.addEventListener("click", () => {
             // btnGreet.innerText(message);
             // TODO: Display a message like "Hello NAME, you are AGE years old!"
@@ -103,7 +102,7 @@
             let name = nameInput.value;
             let age = ageInput.value;
             let message = "Hello " + name + " you are " + age + " years old!"
-            if(age < 13) {
+            if (age < 13) {
                 message = "You're just a kid!"
             }
             console.log(message);
@@ -131,7 +130,7 @@
         function changeVolumeValue(event) {
             volumeOutput.textContent = event.target.value;
         }
-        
+
 
 
         // TODO: Update the background color of colorOutput whenever the color input changes.
@@ -141,17 +140,61 @@
         const subscribeBox = document.getElementById("subscribeBox");
         const btnSubmit = document.getElementById("btnSubmit");
         const modeOutput = document.getElementById("modeOutput");
+        const lightBox = document.getElementById("LightMode");
+        const darkBox = document.getElementById("DarkMode");
+        const systemBox = document.getElementById("SystemMode");
+        let mode = "";
+        let subscribed = false;
 
-        btnSubmit.addEventListener("click", () => {
-            subscribeBox.addEventListener("change", changeValue);
+        subscribeBox.addEventListener("change", changeValue);
 
-            function changeValue(event) {
-                
+        function changeValue(event) {
+            if (event.target.checked) {
+                subscribed = true;
+                console.log("They Subscribed!")
             }
+            else {
+                subscribed = false;
+            }
+        }
 
-            // TODO: Find which radio button is checked and display it.
-            // Challenge: Include whether the user subscribed or not.
-        });
+        lightBox.addEventListener("input", changeLight);
+
+        function changeLight(event) {
+            if(event.target.checked) {
+                mode = "Light";
+                console.log(mode)
+            }
+        }
+
+        darkBox.addEventListener("input", changeDark);
+
+        function changeDark(event) {
+            if(event.target.checked) {
+                mode = "Dark";
+                console.log(mode)
+            }
+        }
+        
+        systemBox.addEventListener("input", changeSystem);
+
+        function changeSystem(event) {
+            if(event.target.checked) {
+                mode = "System";
+                console.log(mode)
+            }
+        }
+
+        btnSubmit.addEventListener("click", optionSumbitted)
+
+        function optionSumbitted(event) {
+            let sumbitMessage = "User selected " + mode + " mode."
+            console.log(sumbitMessage);
+        }
+        
+
+        // TODO: Find which radio button is checked and display it.
+        // Challenge: Include whether the user subscribed or not.
     </script>
 </body>
 
