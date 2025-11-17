@@ -146,42 +146,14 @@
         let mode = "";
         let subscribed = false;
 
-        subscribeBox.addEventListener("change", changeValue);
+        // subscribeBox.addEventListener("change", changeValue);
+        lightBox.addEventListener("input", btnSelect);
+        darkBox.addEventListener("input", btnSelect); 
+        systemBox.addEventListener("input", btnSelect);
 
-        function changeValue(event) {
-            if (event.target.checked) {
-                subscribed = true;
-                console.log("They Subscribed!")
-            }
-            else {
-                subscribed = false;
-            }
-        }
-
-        lightBox.addEventListener("input", changeLight);
-
-        function changeLight(event) {
+        function btnSelect(event) {
             if(event.target.checked) {
-                mode = "Light";
-                console.log(mode)
-            }
-        }
-
-        darkBox.addEventListener("input", changeDark);
-
-        function changeDark(event) {
-            if(event.target.checked) {
-                mode = "Dark";
-                console.log(mode)
-            }
-        }
-        
-        systemBox.addEventListener("input", changeSystem);
-
-        function changeSystem(event) {
-            if(event.target.checked) {
-                mode = "System";
-                console.log(mode)
+                mode = event.target.value
             }
         }
 
@@ -190,6 +162,7 @@
         function optionSumbitted(event) {
             let sumbitMessage = "User selected " + mode + " mode."
             console.log(sumbitMessage);
+            modeOutput.textContent = sumbitMessage;
         }
         
 
