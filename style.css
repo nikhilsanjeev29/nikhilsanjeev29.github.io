@@ -62,8 +62,12 @@ button {
     color: var(--primary);
     border: 10px solid var(--secondary);
     font-family: "Lexend";
-    animation: rotation 3s infinite;
+    
 }   
+
+#dog1 {
+    animation: rotation 3s infinite;
+}
 
 @keyframes rotation {
   from {

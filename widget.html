@@ -22,8 +22,70 @@
 
         </ul>
     </nav>
+<style>
+    /* #cookieScore{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+    #cookieBtn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .scrollingShop{
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+        height: 150px;
+        overflow-y: auto;
+    }
+</style>
+
+<div id="cookieScore">Cookies: </div>    
+<button><img id="cookieBtn"src="images/mc_cookie.png" alt="minecraft cookie" style="width: 400px; height: 300px;"></button>
+<div id="errorMessage"></div>
+<div>Shop: </div>
+<div class="scrollingShop">
+    <button id="grandmaItem"class="shopItem" style="width: 100px; height: 50px">Grandma</button>
     
-<img src="mc_cookie.png" alt="minecraft cookie" style= "width: 200px; height: 200px;">
+</div>
+
+<script>
+const cookieBtn = document.getElementById("cookieBtn"); // scoreIncrement
+const scoreOutput = document.getElementById("cookieScore");
+let score = 0;
+
+const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem
+const errorMessage = document.getElementById("errorMessage");
+let clickPower = 1;
+
+cookieBtn.addEventListener("click", cookieScoreIncrement)
+
+function cookieScoreIncrement(event){
+    score += 1;
+    score += clickPower;
+    console.log(score)
+    scoreOutput.textContent = "Cookies: " + score;
+}
+
+
+
+grandmaItem.addEventListener("click", grandmaCps);
+
+function grandmaCps(){
+    if(score >= 100) {
+        score -= 100;
+        scoreOutput.textContent = "Cookies: " + score;
+        clickPower = 5;
+    }
+    else {
+        _more = 100 - score;
+        errorMessage.textContent = "You don't have enough cookies, you need " + _more + " more."
+    }
+}
+
+</script>
 
 
     
