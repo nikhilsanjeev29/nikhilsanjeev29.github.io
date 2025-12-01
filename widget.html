@@ -45,10 +45,11 @@
 <div id="cookieScore">Cookies: </div>    
 <button><img id="cookieBtn"src="images/mc_cookie.png" alt="minecraft cookie" style="width: 400px; height: 300px;"></button>
 <div id="errorMessage"></div>
+
 <div>Shop: </div>
 <div class="scrollingShop">
-    <button id="grandmaItem"class="shopItem" style="width: 100px; height: 50px">Grandma</button>
-    
+    <button id="grandmaItem"class="shopItem" style="width: 150px; height: 100px">Grandma: 100 Cookies</button>
+    <button id="factoryItem"class="shopItem" style="width: 150px; height: 100px">Factory: 5000 Cookies</button>
 </div>
 
 <script>
@@ -58,7 +59,7 @@ let score = 0;
 
 const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem
 const errorMessage = document.getElementById("errorMessage");
-let clickPower = 1;
+let clickPower = 0;
 
 cookieBtn.addEventListener("click", cookieScoreIncrement)
 
@@ -71,13 +72,13 @@ function cookieScoreIncrement(event){
 
 
 
-grandmaItem.addEventListener("click", grandmaCps);
+grandmaItem.addEventListener("click", grandmaCP);
 
-function grandmaCps(){
+function grandmaCP(){
     if(score >= 100) {
         score -= 100;
         scoreOutput.textContent = "Cookies: " + score;
-        clickPower = 5;
+        clickPower += 1;
     }
     else {
         _more = 100 - score;
@@ -85,6 +86,19 @@ function grandmaCps(){
     }
 }
 
+factoryItem.addEventListener("click", factoryCP);
+
+function factoryCP(){
+    if(score >= 5000) {
+        score -= 5000;
+        scoreOutput.textContent = "Cookies: " + score;
+        clickPower += 25;
+    }
+    else {
+        _more = 5000 - score;
+        errorMessage.textContent = "You don't have enough cookies, you need " + _more + " more."
+    }
+}
 </script>
 
 
