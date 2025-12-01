@@ -83,6 +83,9 @@ function grandmaCP(){
     else {
         _more = 100 - score;
         errorMessage.textContent = "You don't have enough cookies, you need " + _more + " more."
+        setTimeout(() => {
+            errorMessage.textContent = ""
+        }, 3000);
     }
 }
 
@@ -97,6 +100,9 @@ function factoryCP(){
     else {
         _more = 5000 - score;
         errorMessage.textContent = "You don't have enough cookies, you need " + _more + " more."
+        setTimeout(() => {
+            errorMessage.textContent = ""
+        }, 3000);
     }
 }
 </script>
