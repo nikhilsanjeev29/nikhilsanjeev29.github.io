@@ -33,8 +33,20 @@
         justify-content: center;
         align-items: center;
     }
+    #errorMessage{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #shopTitle{
+        display: flex;
+        justify-content: center;
+        align-items: center; 
+    }
     .scrollingShop{
         display: flex;
+        justify-content: center;
+        align-items: center;
         gap: 12px;
         flex-direction: column;
         height: 150px;
@@ -50,28 +62,53 @@
 </div>
 <div id="errorMessage"></div>
 
-<div>Shop: </div>
+<div id="shopTitle">Shop: </div>
 <div class="scrollingShop">
     <button id="grandmaItem"class="shopItem" style="width: 150px; height: 100px">Grandma: 100 Cookies</button>
     <button id="factoryItem"class="shopItem" style="width: 150px; height: 100px">Factory: 5000 Cookies</button>
 </div>
 
 <script>
+const fullCookieBtn = document.getElementById("cookieBtnDiv"); // if I want to update whole clicker
 const cookieBtn = document.getElementById("cookieBtn"); // scoreIncrement
 const scoreOutput = document.getElementById("cookieScore");
 let score = 0;
 
-const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem
+const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem Shop
 const errorMessage = document.getElementById("errorMessage");
 let clickPower = 0;
 
-cookieBtn.addEventListener("click", cookieScoreIncrement)
+const factoryItem = document.getElementById("factoryItem"); // factoryItem Shop
+
+cookieBtn.addEventListener("click", cookieScoreIncrement);
 
 function cookieScoreIncrement(event){
     score += 1;
     score += clickPower;
     console.log(score)
     scoreOutput.textContent = "Cookies: " + score;
+}
+
+cookieBtn.addEventListener("mouseenter", enterHoverCookie);
+let cookieBtnSize = 0;
+let cookieBtnHovered = false;
+
+function enterHoverCookie(){
+    cookieBtnHovered = true;
+    console.log('Hovered!')
+    if (cookieBtnHovered == true) {
+        cookieBtnSize = 1.25;
+        cookieBtn.style.scale = cookieBtnSize;
+    }
+}
+
+cookieBtn.addEventListener("mouseout", exitHoverCookie);
+
+function exitHoverCookie(){
+    console.log('Not Hovered!')
+    cookieBtnHovered = false;
+    cookieBtnSize = 1;
+    cookieBtn.style.scale = cookieBtnSize;
 }
 
 
