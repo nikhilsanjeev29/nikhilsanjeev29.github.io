@@ -23,12 +23,12 @@
         </ul>
     </nav>
 <style>
-    /* #cookieScore{
+    #cookieScore{
         display: flex;
         justify-content: center;
         align-items: center;
-    } */
-    #cookieBtn{
+    }
+    #cookieBtnDiv{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -42,8 +42,12 @@
     }
 </style>
 
-<div id="cookieScore">Cookies: </div>    
-<button><img id="cookieBtn"src="images/mc_cookie.png" alt="minecraft cookie" style="width: 400px; height: 300px;"></button>
+<div id="cookieScore">Cookies: </div> 
+<div id="cookieBtnDiv">
+    <button>
+        <img id="cookieBtn"src="images/mc_cookie.png" alt="minecraft cookie" style="width: 400px; height: 300px;">
+    </button>
+</div>
 <div id="errorMessage"></div>
 
 <div>Shop: </div>
@@ -69,7 +73,6 @@ function cookieScoreIncrement(event){
     console.log(score)
     scoreOutput.textContent = "Cookies: " + score;
 }
-
 
 
 grandmaItem.addEventListener("click", grandmaCP);
