@@ -23,7 +23,7 @@
         </ul>
     </nav>
 <style>
-    #cookieScore{
+    /* #cookieScore{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -43,6 +43,19 @@
         justify-content: center;
         align-items: center; 
     }
+    #nameInput{
+        display: flex;
+        align-items: center;
+    }
+    #secretBtn{
+        display: flex;
+        align-items: center;
+    } */
+    .centeredClass{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .scrollingShop{
         display: flex;
         justify-content: center;
@@ -54,19 +67,23 @@
     }
 </style>
 
-<div id="cookieScore">Cookies: </div> 
-<div id="cookieBtnDiv">
+<div id="cookieScore" class="centeredClass">Cookies: </div> 
+<div id="cookieBtnDiv" class="centeredClass">
     <button>
         <img id="cookieBtn"src="images/mc_cookie.png" alt="minecraft cookie" style="width: 400px; height: 300px;">
     </button>
 </div>
-<div id="errorMessage"></div>
+<div id="errorMessage" class="centeredClass"></div>
 
-<div id="shopTitle">Shop: </div>
+<div id="shopTitle" class="centeredClass">Shop: </div>
 <div class="scrollingShop">
     <button id="grandmaItem"class="shopItem" style="width: 150px; height: 100px">Grandma: 100 Cookies</button>
     <button id="factoryItem"class="shopItem" style="width: 150px; height: 100px">Factory: 5000 Cookies</button>
 </div>
+
+<input id="nameInput" class="centeredClass" type="text" placeholder="Enter your name for a secret!">
+<button id="secretBtn" class="centeredClass">Click for the secret!</button>
+<div id="secretMessage" class="centeredClass"></div>
 
 <script>
 const fullCookieBtn = document.getElementById("cookieBtnDiv"); // if I want to update whole clicker
@@ -145,6 +162,39 @@ function factoryCP(){
         }, 3000);
     }
 }
+
+const nameInput = document.getElementById("nameInput");
+const secretBtn = document.getElementById("secretBtn");
+const secretMessage = document.getElementById("secretMessage");
+
+secretBtn.addEventListener("click", secretNameMessage)
+
+let functRun = false;
+
+function secretNameMessage(){
+        let name = nameInput.value;
+        console.log(name)
+        if(functRun == false && score >= 100){
+            let name = nameInput.value;
+            let message = 'Congrats ' + name + ' , you got your first hundred cookies!'
+            secretMessage.textContent = message
+            setTimeout(() => {
+                secretMessage.textContent = ""
+                }, 3000);
+            console.log(message)
+            functRun = true;
+            console.log(functRun)
+        }
+        else if(functRun == true && score >= 100){
+            let message = "This doesn't do anything anymore..."
+            console.log(message)
+            secretMessage.textContent = message
+            setTimeout(() => {
+                secretMessage.textContent = ""
+                }, 3000);
+        }
+}
+
 </script>
 
 
