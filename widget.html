@@ -23,34 +23,6 @@
         </ul>
     </nav>
 <style>
-    /* #cookieScore{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #cookieBtnDiv{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #errorMessage{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    #shopTitle{
-        display: flex;
-        justify-content: center;
-        align-items: center; 
-    }
-    #nameInput{
-        display: flex;
-        align-items: center;
-    }
-    #secretBtn{
-        display: flex;
-        align-items: center;
-    } */
     .centeredClass{
         display: flex;
         justify-content: center;
@@ -58,11 +30,11 @@
     }
     .scrollingShop{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         gap: 12px;
         flex-direction: column;
-        height: 150px;
+        height: 125px;
         overflow-y: auto;
     }
 </style>
@@ -77,8 +49,9 @@
 
 <div id="shopTitle" class="centeredClass">Shop: </div>
 <div class="scrollingShop">
-    <button id="grandmaItem"class="shopItem" style="width: 150px; height: 100px">Grandma: 100 Cookies</button>
-    <button id="factoryItem"class="shopItem" style="width: 150px; height: 100px">Factory: 5000 Cookies</button>
+    <button id="grandmaItem" class="shopItem" style="width: 150px; height: 100px">Grandma: 100 Cookies</button>
+    <button id="factoryItem" class="shopItem" style="width: 150px; height: 100px">Factory: 1500 Cookies</button>
+    <button id="plantationItem" class="shopItem" style="width: 150px; height: 100px">Plantation: 5000 Cookies</button>
 </div>
 
 <input id="nameInput" class="centeredClass" type="text" placeholder="Enter your name for a secret!">
@@ -91,11 +64,9 @@ const cookieBtn = document.getElementById("cookieBtn"); // scoreIncrement
 const scoreOutput = document.getElementById("cookieScore");
 let score = 0;
 
-const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem Shop
 const errorMessage = document.getElementById("errorMessage");
 let clickPower = 0;
 
-const factoryItem = document.getElementById("factoryItem"); // factoryItem Shop
 
 // cookie incrementer
 
@@ -138,6 +109,7 @@ function exitHoverCookie(){
 
 // shopppppp:
 
+const grandmaItem = document.getElementById("grandmaItem"); // grandmaItem Shop
 
 grandmaItem.addEventListener("click", grandmaCP);
 
@@ -156,13 +128,34 @@ function grandmaCP(){
     }
 }
 
+const factoryItem = document.getElementById("factoryItem"); // factoryItem Shop
+
 factoryItem.addEventListener("click", factoryCP);
 
 function factoryCP(){
+    if(score >= 1500) {
+        score -= 1500;
+        scoreOutput.textContent = "Cookies: " + score;
+        clickPower += 25;
+    }
+    else {
+        let _more = 1500 - score;
+        errorMessage.textContent = "You don't have enough cookies, you need " + _more + " more."
+        setTimeout(() => {
+            errorMessage.textContent = ""
+        }, 3000);
+    }
+}
+
+const plantationItem = document.getElementById("plantationItem"); // plantationItem Shop
+
+plantationItem.addEventListener("click", plantationCP);
+
+function plantationCP(){
     if(score >= 5000) {
         score -= 5000;
         scoreOutput.textContent = "Cookies: " + score;
-        clickPower += 25;
+        clickPower += 50;
     }
     else {
         let _more = 5000 - score;
