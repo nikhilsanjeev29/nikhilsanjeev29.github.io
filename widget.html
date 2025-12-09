@@ -97,6 +97,8 @@ let clickPower = 0;
 
 const factoryItem = document.getElementById("factoryItem"); // factoryItem Shop
 
+// cookie incrementer
+
 cookieBtn.addEventListener("click", cookieScoreIncrement);
 
 function cookieScoreIncrement(event){
@@ -105,6 +107,10 @@ function cookieScoreIncrement(event){
     console.log(score)
     scoreOutput.textContent = "Cookies: " + score;
 }
+
+// cookie incrementer end
+
+// cookiemation
 
 cookieBtn.addEventListener("mouseenter", enterHoverCookie);
 let cookieBtnSize = 0;
@@ -127,6 +133,10 @@ function exitHoverCookie(){
     cookieBtnSize = 1;
     cookieBtn.style.scale = cookieBtnSize;
 }
+
+//cookiemation end
+
+// shopppppp:
 
 
 grandmaItem.addEventListener("click", grandmaCP);
@@ -163,6 +173,10 @@ function factoryCP(){
     }
 }
 
+// shopppp end
+
+//secret
+
 const nameInput = document.getElementById("nameInput");
 const secretBtn = document.getElementById("secretBtn");
 const secretMessage = document.getElementById("secretMessage");
@@ -189,11 +203,13 @@ function secretNameMessage(){
             let message = "This doesn't do anything anymore..."
             console.log(message)
             secretMessage.textContent = message
-            setTimeout(() => {
+            setTimeout(() => {   
                 secretMessage.textContent = ""
                 }, 3000);
         }
 }
+
+// secret end
 
 </script>
 
