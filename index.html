@@ -24,11 +24,93 @@
         </ul>
     </nav>
 
-    <p style="font-size: 30px;">
+    <p>
         Hi! Welcome to my first html website! My name is Nikhil and I have been working on learning
         html, css, and js in order to build this website. Throughout this website there are different features
         that I have made using the knowledge I have learned over a school semester. Hope you enjoy!
     </p>
+
+    <p>
+        Here is a showcase of the uses of html and css that I discovered within my first couple weeks:
+    </p>
+
+    <h1> Title Here </h1>
+    <h2> Another Title Here </h2>
+ 
+    <br><a href="nikhilsanjeev29.github.io">Link to my Website</a>
+
+    <h2 id="Blue"> Blue Text </h2>
+    <h2 id="Red"> Red Text </h2>
+
+    
+    <img id="realImage" src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif" alt="Dog in a field" width="300"
+        height="300">
+
+    
+    <div class="centeredText"> Center </div>
+
+
+    <p style="font-size: 30px; font-weight: bolder;"> Bold </p>
+
+    <ul id="hpList">
+
+        <li> A </li>
+        <li> B </li>
+        <li> C </li>
+
+    </ul>
+
+    
+
+    <button><img id="dog1" style= "width: 200px; height: 200px;" src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif"
+         alt="Dog in a field button" onclick="dogFunction()" ></button>
+    
+    <script>
+        function dogFunction() {
+            alert("Dog!")
+        }
+
+    </script>
+    
+    <h1><del id="Weird"> Weird Text</del></h1>
+    Enter Website to open :
+    <input type="text" id="myTextInput" value="http://www.google.com">
+    <button style="width: 150px; height: 50px; font-size: 20px" onclick="myFunction()">Click Here!</button>
+
+
+    <script>
+        // my dad made  this
+        function myFunction() {
+            alert("Button Clicked!");
+            const inputElement = document.getElementById('myTextInput');
+            const inputValue = inputElement.value;
+            alert("Text Entered " + inputValue);
+            document.getElementById('Weird').innerText = `Website to Open : ${inputValue}`;
+            window.open(inputValue);
+        }
+
+    </script>
+
+    <button style="width: 150px; height: 50px; font-size: 20px" onclick='musicFunction()'>Music!</button>
+    <audio id="songtestaudio" src="songs/songtest2.wav"></audio>
+    <br><video controls style="width: 700px; height: 500px;" src='videos/Venice_5.mp4'></video>
+
+    <script>
+        const songTestAudioElement = document.getElementById("songtestaudio");
+        function musicFunction() {
+            songTestAudioElement.play()
+        }
+
+    </script>
+
+    <p>
+        Just keep in mind, however, that there isn't a real purpose for these elements besides
+        me testing and experimenting with them.
+    </p>
+
+</body>
+
+</html>
 
 
 </body>
