@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        #balloonGameArea{
+        #balloonGameArea {
             border: 5px solid #7661e0;
             padding-left: 10px;
             padding-right: 10px;
@@ -19,6 +19,7 @@
             margin-left: 2em;
             outline: none;
         }
+
         #balloonGameArea:focus {
             border-color: #126d72;
             box-shadow: 0 0 5px #126d72;
@@ -28,7 +29,7 @@
 </head>
 
 <body id="pageTop">
-   <nav class="menu">
+    <nav class="menu">
         <h1><a id="nav_info">Links:</a></h1>
         <ul>
             <li class="menItem"><a href="index.html">Home Page</a></li>
@@ -41,7 +42,8 @@
 
     <p>
         Hi! Welcome to my first html website! My name is Nikhil and I have been working on learning
-        html, css, and js in order to build this website. I love dogs. Throughout this website there are different features
+        html, css, and js in order to build this website. I love dogs. Throughout this website there are different
+        features
         that I have made using the knowledge I have learned over a school semester. Hope you enjoy!
     </p>
 
@@ -51,17 +53,17 @@
 
     <h2> Title Here </h2>
     <h2> Another Title Here </h2>
- 
+
     <br><a href="nikhilsanjeev29.github.io">Link to my Website</a>
 
     <h2 id="Blue"> Blue Text </h2>
     <h2 id="Red"> Red Text </h2>
 
-    
-    <img id="realImage" src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif" alt="Dog in a field" width="300"
-        height="300">
 
-    
+    <img id="realImage" src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif" alt="Dog in a field"
+        width="300" height="300">
+
+
     <div class="centeredText"> Center </div>
 
 
@@ -75,21 +77,23 @@
 
     </ul>
 
-    
 
-    <button><img id="dog1" style= "width: 200px; height: 200px;" src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif"
-         alt="Dog in a field button" onclick="dogFunction()" ></button>
-    
+
+    <button><img id="dog1" style="width: 200px; height: 200px;"
+            src="images/dog-puppy-on-garden-royalty-free-image-1586966191.avif" alt="Dog in a field button"
+            onclick="dogFunction()"></button>
+
     <script>
         function dogFunction() {
             alert("Dog!")
         }
 
     </script>
-    
+
     <h2><del id="Weird"> Weird Text</del></h2>
-    Enter Website to open :
-    <input type="text" id="myTextInput" value="http://www.google.com">
+    <label for="myTextInput">Enter Website to open :
+        <input type="text" id="myTextInput" value="http://www.google.com">
+    </label>
     <button style="width: 150px; height: 50px; font-size: 20px" onclick="myFunction()">Click Here!</button>
 
 
@@ -122,25 +126,26 @@
 
 
     <div id="balloonGameArea" tabindex="0">
-    <p style="font-size: 20px;">Balloon Game: <p>
-    <p id="balloon">🎈</p>
+        <p style="font-size: 20px;">Balloon Game:
+        <p>
+        <p id="balloon">🎈</p>
 
-    <script>
-        let balloonEl = document.getElementById("balloon");
-        let balloonGameArea = document.getElementById("balloonGameArea")
-        let fontSize = 10;
-        
-        function keyDownEvent(event) {
-            if (event.key == "ArrowUp") {
-                //Inflate
-                fontSize *= 1.1;
-                balloonEl.style.fontSize = fontSize + "px";
-                event.preventDefault();
-                if (fontSize >= 100) {
+        <script>
+            let balloonEl = document.getElementById("balloon");
+            let balloonGameArea = document.getElementById("balloonGameArea")
+            let fontSize = 10;
+
+            function keyDownEvent(event) {
+                if (event.key == "ArrowUp") {
+                    //Inflate
+                    fontSize *= 1.1;
+                    balloonEl.style.fontSize = fontSize + "px";
+                    event.preventDefault();
+                    if (fontSize >= 100) {
                         // Pop
                         balloon.textContent = "💥"
                         balloonGameArea.removeEventListener("keydown", keyDownEvent);
-                }
+                    }
                 }
                 else if (event.key == "ArrowDown") {
                     //Deflate
@@ -148,14 +153,14 @@
                     balloonEl.style.fontSize = fontSize + "px";
                     event.preventDefault();
                 }
-        }
-        balloonGameArea.addEventListener("keydown", keyDownEvent);
-        balloonGameArea.addEventListener("click", focusArea);
+            }
+            balloonGameArea.addEventListener("keydown", keyDownEvent);
+            balloonGameArea.addEventListener("click", focusArea);
 
-        function focusArea(){
-            balloonGameArea.focus();
-        }
-    </script>
+            function focusArea() {
+                balloonGameArea.focus();
+            }
+        </script>
     </div>
     <br>
 
@@ -166,7 +171,7 @@
         me testing and experimenting with them. (Check out the dogs page for some really cool css and information!)
     </p>
 
-    
+
 
 </body>
 
