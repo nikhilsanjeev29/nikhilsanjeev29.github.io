@@ -8,6 +8,10 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: var(--text);
     background: var(--background);
@@ -19,7 +23,7 @@ h1, h2, a, center {
 }
 
 li {
-    color: var(--primary);
+    color: var(--accent);
 }
 
 
