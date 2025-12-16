@@ -18,7 +18,6 @@
             <li class="menItem"><a href="index.html">Home Page</a></li>
             <li class="menItem"><a href="dogs.html">Dogs</a></li>
             <li class="menItem"><a href="widget.html">Widget</a></li>
-            <li class="menItem"><a href="js_games.html">Games</a></li>
 
         </ul>
     </nav>
@@ -102,6 +101,58 @@
         }
 
     </script>
+    <br>
+
+    <style>
+        #balloonGameArea{
+            border: 5px solid #7661e0;
+            padding-left: 10px;
+            padding-right: 10px;
+            max-width: 150px;
+            margin-left: 2em;
+            outline: none;
+        }
+        #balloonGameArea:focus {
+            border-color: #126d72;
+            box-shadow: 0 0 5px #126d72;
+        }
+    </style>
+    <div id="balloonGameArea" tabindex="0">
+    <p style="font-size: 20px;">Balloon Game: <p>
+    <p id="balloon">🎈</p>
+
+    <script>
+        let balloonEl = document.getElementById("balloon");
+        let balloonGameArea = document.getElementById("balloonGameArea")
+        let fontSize = 10;
+        
+        function keyDownEvent(event) {
+            if (event.key == "ArrowUp") {
+                //Inflate
+                fontSize *= 1.1;
+                balloonEl.style.fontSize = fontSize + "px";
+                event.preventDefault();
+                if (fontSize >= 100) {
+                        // Pop
+                        balloon.textContent = "💥"
+                        balloonGameArea.removeEventListener("keydown", keyDownEvent);
+                }
+                }
+                else if (event.key == "ArrowDown") {
+                    //Deflate
+                    fontSize /= 1.1;
+                    balloonEl.style.fontSize = fontSize + "px";
+                    event.preventDefault();
+                }
+        }
+        balloonGameArea.addEventListener("keydown", keyDownEvent);
+        balloonGameArea.addEventListener("click", focusArea);
+
+        function focusArea(){
+            balloonGameArea.focus();
+        }
+    </script>
+    </div>
     <br>
 
     <a href="#pageTop">Click here to go back to the top</a>
